@@ -6,12 +6,13 @@ import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 
 public class DriverManager {
     private static WebDriver driver;
     private static Scenario scenario;
+    private static Actions action;
 
-    // Método para inicializar el WebDriver
     @Before
     public void setUp(Scenario scenario) {
         DriverManager.scenario = scenario; // Guardar el escenario actual
@@ -19,9 +20,9 @@ public class DriverManager {
         System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
         driver = new ChromeDriver();
         driver.manage().window().maximize();
+        DriverManager.action = new Actions(driver);
     }
 
-    // Método para cerrar el WebDriver
     @After
     public void quitDriver() {
         if (driver != null) {
@@ -29,13 +30,15 @@ public class DriverManager {
         }
     }
 
-    // Método para obtener el WebDriver
+
     public static WebDriver getDriver() {
         return driver;
     }
 
-    // Método para obtener el Scenario
+
     public static Scenario getScenario() {
         return scenario;
     }
+
+    public static Actions getAction() {return action; }
 }
