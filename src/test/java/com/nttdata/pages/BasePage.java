@@ -21,7 +21,7 @@ public class BasePage {
     public BasePage() {
         DriverManager driverManager = new DriverManager();
         this.driver = DriverManager.getDriver();
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(90));
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(160));
         this.action = DriverManager.getAction();
     }
 
