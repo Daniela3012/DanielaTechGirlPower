@@ -21,7 +21,7 @@ public class BasePage {
     public BasePage() {
         DriverManager driverManager = new DriverManager();
         this.driver = DriverManager.getDriver();
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(160));
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(90));
         this.action = DriverManager.getAction();
     }
 
@@ -30,8 +30,9 @@ public class BasePage {
     }
 
     private WebElement FindByXPath (String locator) {
-        return wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(locator)));
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(locator)));
     }
+
 
     public void hoverOverElement (String locator) {
         action.moveToElement(FindByXPath(locator)).perform();

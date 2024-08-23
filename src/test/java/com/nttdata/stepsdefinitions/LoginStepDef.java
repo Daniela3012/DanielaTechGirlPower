@@ -30,6 +30,7 @@ public class LoginStepDef {
         paginaDeLogin.typePassInput(contrasenia);
         TestUtils.takeScreenShot();
         paginaDeLogin.clickOnLogin();
+        TestUtils.takeScreenShot();
     }
 
     @Cuando("navego a la categoria {string} y subcategoria {string}")

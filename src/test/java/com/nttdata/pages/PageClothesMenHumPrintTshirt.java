@@ -1,5 +1,6 @@
 package com.nttdata.pages;
 
+
 public class PageClothesMenHumPrintTshirt extends BasePage {
     private String btnAddCountThirt = "//i[@class='material-icons touchspin-up']";
     private String btnAddCart = "//button[@class='btn btn-primary add-to-cart']";
@@ -23,11 +24,14 @@ public class PageClothesMenHumPrintTshirt extends BasePage {
     }
 
     public String getConfirmationMessage () {
+
         String actualText = getText(confirmationMessage);
 
         // Limpia el texto eliminando caracteres no alfanuméricos
         String cleanedText = actualText.replaceAll("[^\\p{L}\\p{N}\\s]", "").trim();
         return cleanedText;
+
+
     }
 
     public String getTotalPrice () {

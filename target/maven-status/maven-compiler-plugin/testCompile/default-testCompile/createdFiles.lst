@@ -1,0 +1,7 @@
+com\nttdata\runner\RunnerTest.class
+com\nttdata\pages\PageLoginSaucedemo.class
+com\nttdata\core\DriverManager.class
+com\nttdata\stepsdefinitions\TestUtils.class
+com\nttdata\stepsdefinitions\LoginStepDef.class
+com\nttdata\pages\BasePage.class
+com\nttdata\pages\PageInventarioProducts.class
